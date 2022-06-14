@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>       
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+ <script src="js/register.js"></script>
+ <script type="text/javascript"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>       
+
+    </head>
+    <body>
+
+<div class="container-fluid" >
+     <div class="container py-2 h-120 mt-4" style="border : 2px solid gray; background-color: lightcyan">
+         <a class="btn btn-primary" href="index.html" role="button">Inicio</a>
+	 <div class="row d-flex justify-content-center align-items-center h-100" >
+	  <img src="img/unknown.png"
+                    style="width: 150px;" alt="logo" class="mt-3 rounded-circle">
+			
+	 </div>
+	 
+	 <div class="row justify-content-center"><h3>Doctor Registration</h3></div>	
+	 
+	 
+	 <form>
+  <div class="form-group">
+    
+    <input type="text" class="form-control" id="address" placeholder="Id or email address">
+  </div>
+  
+  <div class="form-group">
+    <input type="password" class="form-control" id="password" placeholder="password">
+  </div>
+  
+  <div class="form-group">
+    
+    <input type="text" class="form-control" id="name" placeholder="name">
+  </div>
+  
+  <div class="form-group">
+   
+    <input type="text" class="form-control" id="especiality" placeholder="especiality">
+  </div>
+  
+  <div class="form-group">
+    <input type="text" class="form-control" id="fee" placeholder="fee">
+  </div>
+             
+  <div class="form-group">
+    <input type="text" class="form-control" id="duration" placeholder="duration">
+  </div>
+  
+  <div class="form-group">
+    
+    <input type="text" class="form-control" id="location" placeholder="location">
+  </div>
+  </form>
+  <form>
+    <div class="form-group" style="margin-left: 10px; margin-right: 10px;">
+      <input type="file" accept="image/*" class="form-control" name="imagen" id="imagen" placeholder="Imagen">
+    </div>
+  </form> 
+  <div class="row d-flex justify-content-center align-items-center py-5">
+    <button type="button" id="schedule" class="btn btn-primary btn-lg mr-2" data-toggle="modal">Schedule</button>
+    <button type="button" class="btn btn-primary btn-lg" id="register">Register</button>
+  </div>
+  </div>
+  </div>
+ 
+ 
+ 
+ 
+ <div class="modal fade" id="add-modal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content " >
+          <div class="modal-header" style="border: none;">
+            
+            <i class="fa-solid fa-calendar-days fa-xl" style="margin-left: 15em;"></i>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="py-1" style="border:1px solid lightgray;" >
+              <h5>Doctor Schedule</h5>
+          </div>
+        
+          <div class="row mx-auto mt-2" id="checkBoxDiv">
+            <div class="col-sm form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">Monday</label>
+            </div>
+              
+            <div class="col-sm  form-check form-check-inline px-5">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">Tuesday</label>
+            </div>
+            <div class="col-sm form-check form-check-inline px-5">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+              <label class="form-check-label" for="inlineCheckbox3">Wednesday</label>
+           </div>
+               <div class="col-sm form-check form-check-inline px-5">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">Thursday</label>
+              </div>
+          
+            <div class="col-sm form-check form-check-inline px-3">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">Friday</label>
+            </div>
+           </div>
+           
+          <div class="row justify-content-around ">
+              
+               <div class="col-2 rounded invisible" id="inlineCheckbox1D" style="background-color: lightgreen;width: 95px;">
+                   
+                   <div class="mt-2"><p>Desde:</p></div>
+                   <div>
+                       
+                       <div class="input-group pl-3 " style="margin-left:-28px">                   
+                        <select class="" id="selectMondayD" style="margin-top:-15px; width: 90px;">
+                          <option selected value="0">Choose...</option>
+                         <option value="8">8:00</option>
+                          <option value="9">9:00</option>
+                          <option value="10">10:00</option>
+                           <option value="11">11:00</option>
+                          <option value="12">12:00</option>
+                          <option value="13">13:00</option>
+                        </select>
+                      </div>
+
+                   </div>
+                   
+                   <div class=""><p>Hasta:</p></div>
+                   <div class="">
+                       
+                      <div class="input-group pl-3" style="margin-left:-28px">                   
+                        <select class="" id="selectMondayH" style="margin-top:-15px; width: 90px;">
+                          <option selected value="0">Choose...</option>
+                          <option value="14">14:00</option>
+                          <option value="15">15:00</option>
+                          <option value="16">16:00</option>
+                          <option value="17">17:00</option>
+                          <option value="18">18:00</option>
+                          <option value="19">19:00</option>
+                          <option value="20">20:00</option>
+                          <option value="21">21:00</option>
+                        </select>
+                      </div>
+
+                   </div>
+                   
+                </div>
+              
+
+              <div class="col-2 rounded invisible" id="inlineCheckbox2D" style="background-color: lightgreen;width: 95px">
+                   
+                   <div class="mt-2"><p>Desde:</p></div>
+                   <div>
+                       
+                       <div class="input-group pl-3" style="margin-left:-28px">                   
+                        <select class="" id="selectTuesdayD" style="margin-top:-15px; width: 90px;">
+                          <option selected value="0">Choose...</option>
+                           <option value="8">8:00</option>
+                          <option value="9">9:00</option>
+                          <option value="10">10:00</option>
+                           <option value="11">11:00</option>
+                          <option value="12">12:00</option>
+                          <option value="13">13:00</option>
+                        </select>
+                      </div>
+
+                   </div>
+                   
+                   <div class=""><p>Hasta:</p></div>
+                   <div class="">
+                       
+                      <div class="input-group pl-3" style="margin-left:-28px">                   
+                        <select class="" id="selectTuesdayH" style="margin-top:-15px; width: 90px;">
+                          <option selected value="0">Choose...</option>
+                          <option value="14">14:00</option>
+                          <option value="15">15:00</option>
+                          <option value="16">16:00</option>
+                          <option value="17">17:00</option>
+                          <option value="18">18:00</option>
+                          <option value="19">19:00</option>
+                          <option value="20">20:00</option>
+                          <option value="21">21:00</option>
+                        </select>
+                      </div>
+
+                   </div>
+                   
+                </div>
+              
+              <div class="col-2 rounded invisible" id="inlineCheckbox3D" style="background-color: lightgreen;width: 95px">
+                   
+                   <div class="mt-2"><p>Desde:</p></div>
+                   <div>
+                       
+                       <div class="input-group pl-3" style="margin-left:-28px">                   
+                        <select class="" id="selectWednesdayD" style="margin-top:-15px; width: 90px;">
+                          <option selected value="0">Choose...</option>
+                         <option value="8">8:00</option>
+                          <option value="9">9:00</option>
+                          <option value="10">10:00</option>
+                           <option value="11">11:00</option>
+                          <option value="12">12:00</option>
+                          <option value="13">13:00</option>
+                        </select>
+                      </div>
+
+                   </div>
+                   
+                   <div class=""><p>Hasta:</p></div>
+                   <div class="">
+                       
+                      <div class="input-group pl-3" style="margin-left:-28px">                   
+                        <select class="" id="selectWednesdayH" style="margin-top:-15px; width: 90px;">
+                          <option selected value="0">Choose...</option>
+                        <option value="1">14:00</option>
+                        <option value="14">14:00</option>
+                          <option value="15">15:00</option>
+                          <option value="16">16:00</option>
+                          <option value="17">17:00</option>
+                          <option value="18">18:00</option>
+                          <option value="19">19:00</option>
+                          <option value="20">20:00</option>
+                          <option value="21">21:00</option>
+                        </select>
+                      </div>
+
+                   </div>
+                   
+                </div>
+              
+              <div class="col-2 rounded invisible" id="inlineCheckbox4D" style="background-color: lightgreen;width: 95px">
+                   
+                   <div class="mt-2"><p>Desde:</p></div>
+                   <div>
+                       
+                       <div class="input-group pl-3" style="margin-left:-28px">                   
+                        <select class="" id="selectThursdayD" style="margin-top:-15px; width: 90px;">
+                          <option selected value="0">Choose...</option>
+                         <option value="8">8:00</option>
+                          <option value="9">9:00</option>
+                          <option value="10">10:00</option>
+                           <option value="11">11:00</option>
+                          <option value="12">12:00</option>
+                          <option value="13">13:00</option>
+                        </select>
+                      </div>
+
+                   </div>
+                   
+                   <div class=""><p>Hasta:</p></div>
+                   <div class="">
+                       
+                      <div class="input-group pl-3" style="margin-left:-28px">                   
+                        <select class="" id="selectThursdayH" style="margin-top:-15px; width: 90px;">
+                          <option selected value="0">Choose...</option>
+                        <option value="1">14:00</option>
+                        <option value="14">14:00</option>
+                          <option value="15">15:00</option>
+                          <option value="16">16:00</option>
+                          <option value="17">17:00</option>
+                          <option value="18">18:00</option>
+                          <option value="19">19:00</option>
+                          <option value="20">20:00</option>
+                          <option value="21">21:00</option>
+                        </select>
+                      </div>
+
+                   </div>
+                   
+                </div>
+              
+              <div class="col-2 rounded invisible" id="inlineCheckbox5D" style="background-color: lightgreen;width: 95px;">
+                   
+                   <div class="mt-2"><p>Desde:</p></div>
+                   <div>
+                       
+                       <div class="input-group pl-3" style="margin-left:-28px">                   
+                        <select class="" id="selectFridayH" style="margin-top:-15px; width: 90px;">
+                          <option selected value="0">Choose...</option>
+                          <option value="8">8:00</option>
+                          <option value="9">9:00</option>
+                          <option value="10">10:00</option>
+                           <option value="11">11:00</option>
+                          <option value="12">12:00</option>
+                          <option value="13">13:00</option>
+                        </select>
+                      </div>
+
+                   </div>
+                   
+                   <div class=""><p>Hasta:</p></div>
+                   <div class="">
+                       
+                      <div class="input-group pl-3" style="margin-left:-28px">                   
+                        <select class="" id="selectFridayD" style="margin-top:-15px; width: 90px;">
+                          <option selected value="0">Choose...</option>
+                       <option value="14">14:00</option>
+                          <option value="15">15:00</option>
+                          <option value="16">16:00</option>
+                          <option value="17">17:00</option>
+                          <option value="18">18:00</option>
+                          <option value="19">19:00</option>
+                          <option value="20">20:00</option>
+                          <option value="21">21:00</option>
+                          
+                        </select>
+                      </div>
+
+                   </div>
+                   
+                </div>
+              
+          </div>
+           
+           <hr class="my-4">
+          
+          <div class=" mb-4 pt-4 text-center border-top">
+              
+              <button type="button" class=" btn btn-primary btn-lg" id="save">Save</button>
+              
+              
+          </div>
+
+    </div>
+  </div>
+</div>
+ 
+ 
+	</body>
+</html>
