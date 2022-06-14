@@ -56,7 +56,7 @@ public class docsBackEnd {
          valores[4] = d.getNombre();
          valores[5] = "0"; //0 sin aprobar
          valores[6] = String.valueOf(d.getCostoConsulta());
-         valores[7] = "60"; //to do
+         valores[7] = d.getDuracion(); //to do
          valores[8] = d.getLocalidad();
          valores[9] = d.getEspecialidad();
          service.insertarRegistro(valores);
@@ -93,22 +93,15 @@ public class docsBackEnd {
         String valores = "select * from medicos where id = '" + u.getCedula() + "' and clave = '" + u.getClave() + "'";
         
         if(service.verificarExistencia(valores)){
-         
             Doctores d;
             d = service.recuperaDoc(valores);
-            
             String mensaje = "select * from horario where id_doc = '" + d.getCedula() + "'";
-            
             d.setHorario(service.recuperHorario(mensaje));
             request.getSession(true).setAttribute("doctor", d);
-            
             return d;
-            
         }else{
             return null;
-        }
-        
-        
+        } 
     }
     
     @POST
