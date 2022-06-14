@@ -10,6 +10,7 @@ import docs.logic.Doctores;
 import docs.logic.Usuario;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.Provider.Service;
@@ -26,6 +27,7 @@ import javax.ws.rs.DELETE;
 import javax.ws.rs.NotAcceptableException;
 import javax.ws.rs.POST;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.Response;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
 /**
@@ -115,6 +117,15 @@ public class docsBackEnd {
             } catch (Exception ex) {
                 throw new NotAcceptableException(); 
             }
+    }
+    
+    @GET
+    @Path("{cedula}/imagen")
+    @Produces("image/png")
+    public Response getImge(@PathParam("cedula") String cedula) throws IOException {
+        File file = new File(location+cedula);
+        Response.ResponseBuilder response = Response.ok((Object) file);
+        return response.build();
     }
 }
 
